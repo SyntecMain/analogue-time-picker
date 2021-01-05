@@ -30,10 +30,7 @@ function create(input?: TimePickerModalData) {
     var modal = createModal(timePicker.element);
 
     modal.onClickOrEsc(() => timePicker.cancel());
-    timePicker.onDispose(modal.dispose);
-    
-    // focus on the first textbox in the time picker
-    context.getInnerElement<HTMLInputElement>(".atp-hour").focus();
+    timePicker.onDispose(modal.dispose);    
 
     return timePicker;
 }
