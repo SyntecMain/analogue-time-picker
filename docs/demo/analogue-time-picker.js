@@ -1787,9 +1787,7 @@ function timePickerModal_create(input) {
     var timePicker = publicTimePicker(context);
     var modal = createModal(timePicker.element);
     modal.onClickOrEsc(function () { return timePicker.cancel(); });
-    timePicker.onDispose(modal.dispose);
-    // focus on the first textbox in the time picker
-    context.getInnerElement(".atp-hour").focus();
+    timePicker.onDispose(modal.dispose);    
     return timePicker;
 }
 
