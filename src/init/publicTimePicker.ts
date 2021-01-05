@@ -101,28 +101,28 @@ function publicTimePicker(context: DiContext): TimePicker {
                 throw new Error("onOk callback must be a function");
             }
 
-            timePicker.onTimeChanged(callback);
+            timePicker.onTimeChanged(callback as (hour: number, minute: number) => void);
         },
         onOk: (callback: object) => {
             if (typeof callback !== "function") {
                 throw new Error("onOk callback must be a function");
             }
 
-            timePicker.onOk(callback);
+            timePicker.onOk(callback as (hour: number, minute: number) => void);
         },
         onCancel: (callback: object) => {
             if (typeof callback !== "function") {
                 throw new Error("onCancel callback must be a function");
             }
 
-            timePicker.onCancel(callback);
+            timePicker.onCancel(callback as () => void);
         },
         onDispose: (callback: object) => {
             if (typeof callback !== "function") {
                 throw new Error("onCancel callback must be a function");
             }
 
-            onDispose.push(callback);
+            onDispose.push(callback as () => void);
         },
         dispose
     };
